@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<div class="container">
+  <table class="table table-striped">
+    <thead class="text-light">
+      <tr>
+        <th>#</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Image</th>
+        <th>Operation</th>
+      </tr>
+    </thead>
+    <tbody >
+      {% for girl_type in girl_types %}
+        <tr>
+          <td class = "text-danger">{{ loop.index }}</td>
+          <td class ="text-warning">{{ girl_type.name }}</td>
+          <td class="text-success">{{ girl_type.description }}</td>
+          <td><a target="_blank" href="{{ girl_type.image }}">Full HD</a></td>
+          <td >
+            <a href="{{ url_for('edit_girl', girl_id=girl_type.id) }}" class="text-purple">
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            </a>
+            <a href="/delete_girl/{{ girl_type.id }}" class="text-purple">
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+            </a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

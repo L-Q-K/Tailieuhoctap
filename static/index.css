@@ -10,15 +10,32 @@ h4 { /* all */
   color: purple;
 }
 
-body{
+body {
   background-color: black;
 }
 
-.card-girl-type {
+.card-girl-type  {
   min-height: 450px !important;
 }
 
 .card-girl-img {
   object-fit: cover;
   height: 20vw !important;
+}
+
+.text-purple {
+  color: purple;
+}
+
+.search{
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url("https://cdn3.iconfinder.com/data/icons/other-icons/48/search-32.png");
+    background-position: 8px 8px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
 }

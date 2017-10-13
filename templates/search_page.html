@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<div class="container" >
+<a href="/" class ="btn btn-info float-right">Trang chủ</a>
+<form class="" action="/search" method="get">
+    <input type="text" name="girl" placeholder="Search.." class="search mb-3">
+</form>
+</div>
+<div class="container">
+<div class ="row">
+  {% for girl_type in search_results %}
+    <div class="col-md-4 col-sm-6 m*-3">
+      <div class="card-girl-type card mb-4">
+        <img src="{{ girl_type["image"] }}" alt="{{ girl_type["name"] }}" class ="card-girl-img mb-3 img-fluid card-img-top">
+        <div class="card-body">
+          <h4 class="card-title"> {{ girl_type["name"] }} </h4>
+          <p class="text-danger">{{ girl_type["description"] }}</p>
+        </div>
+        <div class ="card-footer">
+          <div class="clearfix">
+            <a href="/girl/{{ girl_type.id }}" class="float-right">
+              <button class="btn btn-dark float-right">Read more</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+</div>
+
+
+{% endblock %}
